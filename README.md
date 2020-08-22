@@ -7,7 +7,7 @@ song lyric structures.
 The experiments were conducted on an English Song dataset.	
 In addition to that, a web-based inference tool is developed, which allows us to easily generate lyrics when we provide input.
 
-#RNN
+**RNN**
 
 A recurrent neural network (RNN) is a class of artificial neural network where
 connections between units form a directed graph along a sequence. This allows it
