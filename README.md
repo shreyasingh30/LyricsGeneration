@@ -46,5 +46,31 @@ All recurrent neural networks have the form of a chain of repeating modules of
 neural network. In standard RNNs, this repeating module will have a very simple
 structure, such as a single tanh layer.
  
- ![alt text](https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.analyticsvidhya.com%2Fwp-content%2Fuploads%2F2017%2F12%2F10131302%2F13.png&imgrefurl=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2017%2F12%2Ffundamentals-of-deep-learning-introduction-to-lstm%2F&tbnid=8f57sO6F64yORM&vet=12ahUKEwihlKGfmq_rAhXNeysKHYftDHsQMygJegUIARDRAQ..i&docid=v7ICjJ6RDsssZM&w=1090&h=418&q=lstm%20network&ved=2ahUKEwihlKGfmq_rAhXNeysKHYftDHsQMygJegUIARDRAQ)
+ ![alt text](https://miro.medium.com/max/700/1*laH0_xXEkFE0lKJu54gkFQ.png)
+ 
+ LSTMs also have this chain-like structure, but the repeating module has a different
+structure. Instead of having a single neural network layer, there are four,
+interacting in a very special way.
+The key to LSTMs is the cell state. The cell state is kind of like a conveyor belt. It runs straight down the entire chain, with only some minor linear interactions. It’s very easy for information to just flow along it unchanged. The LSTM does have the ability to remove or add information to the cell state, carefully regulated by
+structures called gates. Gates are a way to optionally let information through. They
+are composed out of a sigmoid neural net layer and a pointwise multiplication
+operation. The sigmoid layer outputs numbers between zero and one, describing
+how much of each component should be let through. A value of zero means “let
+nothing through,” while a value of one means “let everything through!” An LSTM
+has three of these gates, to protect and control the cell state.
+
+**GRU**
+GRU (Gated Recurrent Unit) aims to solve the vanishing gradient problem which
+comes with a standard recurrent neural network. GRU can also be considered as a
+variation on the LSTM because both are designed similarly and, in some cases,
+produce equally excellent results.The GRU unlike LSTM dont not have cell state instead they have hidden state.
+To solve the vanishing gradient problem of a standard RNN, GRU uses, so called,
+*update gate* and *reset gate*. Basically, these are two vectors which decide what information should be passed to the output. The special thing about them is that they can be trained to keep information from long ago, without washing it through time or remove information which is irrelevant to the prediction.
+
+Update Gate:The update gate helps the model to determine how much of the past information (from previous time steps) needs to be passed along to the future. That is really powerful because the model can decide to copy all the information from the past and eliminate the risk of vanishing gradient problem. 
+ 
+ Reset Gate: The reset gate is used from the model to decide how much of the past information to forget.
+    
+![alt text](https://blog.floydhub.com/content/images/2019/07/image14.jpg)
+
 
