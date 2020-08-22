@@ -19,3 +19,4 @@ Recurrent Neural Network comes into the picture when any model needs context
 to be able to provide the output based on the input. Sometimes the context is the
 single most important thing for the model to predict the most appropriate output.
 
+![alt text](https://miro.medium.com/max/627/1*go8PHsPNbbV6qRiwpUQ5BQ.png)
