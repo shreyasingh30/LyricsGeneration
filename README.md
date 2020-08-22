@@ -23,6 +23,7 @@ single most important thing for the model to predict the most appropriate output
 
 **Problem of Long Term Dependencies**
 Sometimes we only need to look at recent information to perform the present task. For example : Consider a language model trying to predict next word based on previous ones.
+
 *PREDICT : "THE CLOUDS ARE IN ..."*
  We don't need to further context as it is obvious that the word is sky. In such cases, where the gap between the relevant information and the place that is needed to predict is small , RNN can learn to use the past information. But there can be cases where we need to remember large content to predict the next word .
  
@@ -32,3 +33,18 @@ Sometimes we only need to look at recent information to perform the present task
  
  Although Simple RNN should theoretically be able to retain at time t information about inputs seen many timesteps before, in practice, such long-term dependencies are impossible to learn. This is due to the vanishing gradient problem, an effect that is similar to what is observed with non-recurrent networks (feedforward networks) that are many layers deep: as we keep adding layers to a network, the network eventually becomes untrainable. The LSTM and GRU layers are designed to solve this problem.
  
+ **LSTM NETWORK**
+The underlying Long Short-Term Memory ( LSTM ) algorithm was developed by Hochreiter and Schmidhuber in 1997; it was the culmination of their research on the vanishing gradient problem.
+
+Long Short Term Memory networks – usually just called “LSTMs” – are a special
+kind of RNN, capable of learning long-term dependencies. LSTMs are explicitly
+designed to avoid the long-term dependency problem. Remembering information
+for long periods of time is practically their default behavior, not something they
+struggle to learn!
+
+All recurrent neural networks have the form of a chain of repeating modules of
+neural network. In standard RNNs, this repeating module will have a very simple
+structure, such as a single tanh layer.
+ 
+ ![alt text](https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.analyticsvidhya.com%2Fwp-content%2Fuploads%2F2017%2F12%2F10131302%2F13.png&imgrefurl=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2017%2F12%2Ffundamentals-of-deep-learning-introduction-to-lstm%2F&tbnid=8f57sO6F64yORM&vet=12ahUKEwihlKGfmq_rAhXNeysKHYftDHsQMygJegUIARDRAQ..i&docid=v7ICjJ6RDsssZM&w=1090&h=418&q=lstm%20network&ved=2ahUKEwihlKGfmq_rAhXNeysKHYftDHsQMygJegUIARDRAQ)
+
